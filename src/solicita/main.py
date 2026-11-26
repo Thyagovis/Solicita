@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from contextlib import asynccontextmanager
+from agents.controller import router
 
 @asynccontextmanager
 async def lifespan(app : FastAPI):
@@ -11,3 +12,5 @@ async def lifespan(app : FastAPI):
     print("encerrando aplicação...")
 
 app = FastAPI(lifespan = lifespan)
+
+app.include_router(router)
