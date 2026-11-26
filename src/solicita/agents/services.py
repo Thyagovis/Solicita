@@ -4,7 +4,7 @@ from agents.order_agents import order_agent
 class AgentServices:
 
     @staticmethod
-    async def extract_order(self, agentIn : AgentIn):
+    async def extract_order(agentIn : AgentIn):
 
         result = await order_agent.run(
             user_prompt=agentIn.mensage,

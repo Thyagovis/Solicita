@@ -3,7 +3,7 @@ from pydantic_ai.models.google import GoogleModel
 from pydantic_ai.providers.google import GoogleProvider
 from core.config import settings
 
-provider = GoogleProvider(api_key= settings.ai_api_key)
+provider = GoogleProvider(api_key= settings.ai_api_key.get_secret_value())
 model = GoogleModel("gemini-3.1-flash-lite", provider = provider)
 
 order_agent = Agent(
