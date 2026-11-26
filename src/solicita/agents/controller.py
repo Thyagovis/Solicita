@@ -8,4 +8,4 @@ router = APIRouter(prefix= "/api/v1/extract")
 @router.post("/")
 async def extract_order(agentIn : AgentIn):
 
-    return await AgentServices.extract_order(agentIn)
+    return await AgentServices.extract_order(agentIn = agentIn)
